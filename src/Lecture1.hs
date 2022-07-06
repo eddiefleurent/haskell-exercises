@@ -55,7 +55,7 @@ Explanation: @sumOfSquares 3 4@ should be equal to @9 + 16@ and this
 is 25.
 -}
 sumOfSquares :: Integer -> Integer -> Integer
-sumOfSquares x y = x^2 + y^2
+sumOfSquares x y = x^(2 :: Integer) + y^(2 :: Integer)
 
 {- | Implement a function that returns the last digit of a given number.
 
@@ -84,7 +84,7 @@ function.
 -}
 minmax :: Int -> Int -> Int -> Int
 minmax x y z = maxval - minval
-    where 
+    where
         maxval = max x $ max y z
         minval = min x $ min y z
 
@@ -113,11 +113,20 @@ subString start end str
 and finds a sum of the numbers inside this string.
 
 >>> strSum "100    -42  15"
-73
+NOW 73
 
 The string contains only spaces and/or numbers.
 -}
-strSum str = error "TODO"
+strSum :: String -> Int
+strSum str = sumnums 0 nums
+    where
+        nums :: [Int]
+        nums = map read (words str)
+        sumnums :: Int -> [Int] -> Int
+        sumnums tally [] = tally
+        sumnums tally (x : xs) = sumnums (tally + x) xs
+
+
 
 {- | Write a function that takes a number and a list of numbers and
 returns a string, saying how many elements of the list are strictly
