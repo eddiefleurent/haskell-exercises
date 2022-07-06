@@ -118,14 +118,7 @@ NOW 73
 The string contains only spaces and/or numbers.
 -}
 strSum :: String -> Int
-strSum str = sumnums 0 nums
-    where
-        nums :: [Int]
-        nums = map read (words str)
-        sumnums :: Int -> [Int] -> Int
-        sumnums tally [] = tally
-        sumnums tally (x : xs) = sumnums (tally + x) xs
-
+strSum str = sum (map read (words str))
 
 
 {- | Write a function that takes a number and a list of numbers and
