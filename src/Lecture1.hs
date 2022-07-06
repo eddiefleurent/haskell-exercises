@@ -136,7 +136,6 @@ and lower than 6 elements (4, 5, 6, 7, 8 and 9).
 -}
 lowerAndGreater :: Int -> [Int] -> String
 lowerAndGreater n list = display' (go (0,0) list)
-        -- show n ++ " is greater than " ++ show fst nums ++ " elements and lower than " ++ show snd nums ++ " elements"
         where 
             go :: (Int, Int) -> [Int] -> (Int, Int)
             go nums [] = nums
