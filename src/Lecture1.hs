@@ -113,7 +113,7 @@ subString start end str
 and finds a sum of the numbers inside this string.
 
 >>> strSum "100    -42  15"
-NOW 73
+73
 
 The string contains only spaces and/or numbers.
 -}
