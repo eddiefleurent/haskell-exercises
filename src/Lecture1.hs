@@ -134,4 +134,15 @@ and lower than 6 elements (4, 5, 6, 7, 8 and 9).
 
 🕯 HINT: Use recursion to implement this function.
 -}
-lowerAndGreater n list = error "TODO"
+lowerAndGreater :: Int -> [Int] -> String
+lowerAndGreater n list = display' (go (0,0) list)
+        -- show n ++ " is greater than " ++ show fst nums ++ " elements and lower than " ++ show snd nums ++ " elements"
+        where 
+            go :: (Int, Int) -> [Int] -> (Int, Int)
+            go nums [] = nums
+            go nums (x : xs)
+             | n < x = go (fst nums, snd nums + 1) xs
+             | n > x = go (fst nums + 1, snd nums) xs
+             | otherwise = go nums xs
+            display' :: (Int, Int) -> String
+            display' nums' = show n ++ " is greater than " ++ show (fst nums') ++ " elements and lower than " ++ show (snd nums') ++ " elements"
