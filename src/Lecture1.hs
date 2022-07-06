@@ -32,7 +32,7 @@ module Lecture1
     ) where
 
 -- VVV If you need to import libraries, do it after this line ... VVV
-import Data.List
+
 -- ^^^ and before this line. Otherwise the test suite might fail  ^^^
 
 {- | Specify the type signature of the following function. Think about
