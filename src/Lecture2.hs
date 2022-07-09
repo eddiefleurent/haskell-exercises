@@ -52,7 +52,13 @@ zero, you can stop calculating product and return 0 immediately.
 84
 -}
 lazyProduct :: [Int] -> Int
-lazyProduct = error "TODO"
+lazyProduct list
+  | null list = 1
+  | first == 0 = 0
+  | otherwise = first * lazyProduct rest
+  where
+    first = head list
+    rest = tail list
 
 {- | Implement a function that duplicates every element in the list.
 
