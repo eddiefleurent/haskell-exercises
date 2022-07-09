@@ -68,7 +68,12 @@ lazyProduct list
 "ccaabb"
 -}
 duplicate :: [a] -> [a]
-duplicate = error "TODO"
+duplicate list 
+  | null list = []
+  | otherwise = first : first : duplicate rest
+  where
+    first = head list
+    rest = tail list
 
 {- | Implement function that takes index and a list and removes the
 element at the given position. Additionally, this function should also
