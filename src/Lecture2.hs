@@ -75,6 +75,9 @@ duplicate list
     first = head list
     rest = tail list
 
+duplicate' :: [a] -> [a]
+duplicate' = concatMap $ replicate 2
+
 {- | Implement function that takes index and a list and removes the
 element at the given position. Additionally, this function should also
 return the removed element.
